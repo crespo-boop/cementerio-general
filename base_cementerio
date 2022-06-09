@@ -1,0 +1,499 @@
+/*==============================================================*/
+/* DBMS name:      ORACLE Version 12c                           */
+/* Created on:     08/06/2022 17:13:01                          */
+/*==============================================================*/
+
+
+alter table BOVEDA
+   drop constraint FK_BOVEDA_RELATIONS_ESTRUCTU;
+
+alter table BOVEDA
+   drop constraint FK_BOVEDA_RELATIONS_PROPIETA;
+
+alter table CERTIFICADO
+   drop constraint FK_CERTIFIC_RELATIONS_PERSONAL;
+
+alter table CERTIFICADO
+   drop constraint FK_CERTIFIC_RELATIONS_PROPIETA;
+
+alter table ESTRUCTURA
+   drop constraint FK_ESTRUCTU_RELATIONS_MANZANA;
+
+alter table INCIDENTE
+   drop constraint FK_INCIDENT_RELATIONS_REPORTE;
+
+alter table INCIDENTE
+   drop constraint FK_INCIDENT_RELATIONS_BOVEDA;
+
+alter table MANZANA
+   drop constraint FK_MANZANA_RELATIONS_CEMENTER;
+
+alter table PAGOS
+   drop constraint FK_PAGOS_RELATIONS_PERSONAL;
+
+alter table PAGOS
+   drop constraint FK_PAGOS_RELATIONS_PROPIETA;
+
+alter table PERSONAL
+   drop constraint FK_PERSONAL_RELATIONS_CEMENTER;
+
+alter table PROPIETARIO
+   drop constraint FK_PROPIETA_RELATIONS_CANTON;
+
+alter table RELATIONSHIP_16
+   drop constraint FK_RELATION_RELATIONS_TRAMITE;
+
+alter table RELATIONSHIP_16
+   drop constraint FK_RELATION_RELATIONS_PAGOS;
+
+alter table REPORTE
+   drop constraint FK_REPORTE_RELATIONS_PERSONAL;
+
+alter table TRAMITE
+   drop constraint FK_TRAMITE_RELATIONS_BOVEDA;
+
+alter table TRAMITE
+   drop constraint FK_TRAMITE_RELATIONS_PERSONAL;
+
+alter table TRAMITE
+   drop constraint FK_TRAMITE_RELATIONS_DIFUNTO;
+
+drop index RELATIONSHIP_29_FK;
+
+drop index RELATIONSHIP_5_FK;
+
+drop table BOVEDA cascade constraints;
+
+drop table CANTON cascade constraints;
+
+drop table CEMENTERIO cascade constraints;
+
+drop index RELATIONSHIP_20_FK;
+
+drop index RELATIONSHIP_28_FK;
+
+drop table CERTIFICADO cascade constraints;
+
+drop table DIFUNTO cascade constraints;
+
+drop index RELATIONSHIP_2_FK;
+
+drop table ESTRUCTURA cascade constraints;
+
+drop index RELATIONSHIP_18_FK;
+
+drop index RELATIONSHIP_6_FK;
+
+drop table INCIDENTE cascade constraints;
+
+drop index RELATIONSHIP_1_FK;
+
+drop table MANZANA cascade constraints;
+
+drop index RELATIONSHIP_22_FK;
+
+drop index RELATIONSHIP_27_FK;
+
+drop table PAGOS cascade constraints;
+
+drop index RELATIONSHIP_15_FK;
+
+drop table PERSONAL cascade constraints;
+
+drop index RELATIONSHIP_17_FK;
+
+drop table PROPIETARIO cascade constraints;
+
+drop index RELATIONSHIP_16_FK;
+
+drop index RELATIONSHIP_23_FK;
+
+drop table RELATIONSHIP_16 cascade constraints;
+
+drop index RELATIONSHIP_21_FK;
+
+drop table REPORTE cascade constraints;
+
+drop index RELATIONSHIP_19_FK;
+
+drop index RELATIONSHIP_30_FK;
+
+drop index RELATIONSHIP_10_FK;
+
+drop table TRAMITE cascade constraints;
+
+/*==============================================================*/
+/* Table: BOVEDA                                                */
+/*==============================================================*/
+create table BOVEDA (
+   ID_BOVEDA            INTEGER               not null,
+   ID_PROPIETARIO       INTEGER,
+   ID_ESTRUCTURA        INTEGER,
+   AREA_BOVEDA          VARCHAR2(2),
+   ESTADO_BOVEDA        VARCHAR2(10),
+   NOMBRE_BOVEDA        VARCHAR2(10),
+   constraint PK_BOVEDA primary key (ID_BOVEDA)
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_5_FK                                     */
+/*==============================================================*/
+create index RELATIONSHIP_5_FK on BOVEDA (
+   ID_PROPIETARIO ASC
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_29_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_29_FK on BOVEDA (
+   ID_ESTRUCTURA ASC
+);
+
+/*==============================================================*/
+/* Table: CANTON                                                */
+/*==============================================================*/
+create table CANTON (
+   ID_CANTON            INTEGER               not null,
+   NOMBRE_CANTON        VARCHAR2(30),
+   constraint PK_CANTON primary key (ID_CANTON)
+);
+
+/*==============================================================*/
+/* Table: CEMENTERIO                                            */
+/*==============================================================*/
+create table CEMENTERIO (
+   ID_CEMENTERIO        INTEGER               not null,
+   DIRECCION_CEMENTERIO CHAR(30),
+   NOMBRE_CEMENTERIO    VARCHAR2(30),
+   TAMANO_CEMENTERIO    VARCHAR2(10),
+   constraint PK_CEMENTERIO primary key (ID_CEMENTERIO)
+);
+
+/*==============================================================*/
+/* Table: CERTIFICADO                                           */
+/*==============================================================*/
+create table CERTIFICADO (
+   ID_CERTIFICADO       INTEGER               not null,
+   ID_PROPIETARIO       INTEGER,
+   ID_PERSONAL          INTEGER,
+   FECHA_CERTIFICADO    DATE,
+   EMISOR_CERTIFICADO   VARCHAR2(30),
+   TIPO_CERTIFICADO     VARCHAR2(30),
+   DESCRIPCION_DERTIFICADO CLOB,
+   ESTADO_CERTIFICADO   VARCHAR2(15),
+   constraint PK_CERTIFICADO primary key (ID_CERTIFICADO)
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_28_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_28_FK on CERTIFICADO (
+   ID_PROPIETARIO ASC
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_20_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_20_FK on CERTIFICADO (
+   ID_PERSONAL ASC
+);
+
+/*==============================================================*/
+/* Table: DIFUNTO                                               */
+/*==============================================================*/
+create table DIFUNTO (
+   ID_DIFUNTO           INTEGER               not null,
+   NOMBRE_DIFUNTO       VARCHAR2(30),
+   APELLIDO_DIFUNTO     VARCHAR2(30),
+   CAUSADEMUERTE_DIFUNTO VARCHAR2(30),
+   FECHADEMUERTE_DIFUNTO DATE,
+   constraint PK_DIFUNTO primary key (ID_DIFUNTO)
+);
+
+/*==============================================================*/
+/* Table: ESTRUCTURA                                            */
+/*==============================================================*/
+create table ESTRUCTURA (
+   ID_ESTRUCTURA        INTEGER               not null,
+   ID_MANZANA           INTEGER,
+   AREA_ESTRUCTURA      VARCHAR2(20),
+   TIPO_ESTRUCTURA      VARCHAR2(30),
+   CANTIDADDEBOVEDAD_ESTRUCTURA VARCHAR2(3),
+   PROPORCIONES_ESTRCUTURA VARCHAR2(30),
+   NUMERO_ESTRUCTURA    VARCHAR2(3),
+   constraint PK_ESTRUCTURA primary key (ID_ESTRUCTURA)
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_2_FK                                     */
+/*==============================================================*/
+create index RELATIONSHIP_2_FK on ESTRUCTURA (
+   ID_MANZANA ASC
+);
+
+/*==============================================================*/
+/* Table: INCIDENTE                                             */
+/*==============================================================*/
+create table INCIDENTE (
+   ID_INCIDENTE         INTEGER               not null,
+   ID_BOVEDA            INTEGER,
+   ID_REPORTE           INTEGER,
+   AREA_INCIDENTE       VARCHAR2(4),
+   TIPO_INCIDENTE       VARCHAR2(30),
+   BOVEDA_INCIDENTE     VARCHAR2(6),
+   HORA_INCIDENTE       VARCHAR2(10),
+   constraint PK_INCIDENTE primary key (ID_INCIDENTE)
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_6_FK                                     */
+/*==============================================================*/
+create index RELATIONSHIP_6_FK on INCIDENTE (
+   ID_BOVEDA ASC
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_18_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_18_FK on INCIDENTE (
+   ID_REPORTE ASC
+);
+
+/*==============================================================*/
+/* Table: MANZANA                                               */
+/*==============================================================*/
+create table MANZANA (
+   ID_MANZANA           INTEGER               not null,
+   ID_CEMENTERIO        INTEGER,
+   AREA_MANZANA         VARCHAR2(1),
+   NUMERO_MANZANA       VARCHAR2(3),
+   constraint PK_MANZANA primary key (ID_MANZANA)
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_1_FK                                     */
+/*==============================================================*/
+create index RELATIONSHIP_1_FK on MANZANA (
+   ID_CEMENTERIO ASC
+);
+
+/*==============================================================*/
+/* Table: PAGOS                                                 */
+/*==============================================================*/
+create table PAGOS (
+   ID_PAGOS             INTEGER               not null,
+   ID_PROPIETARIO       INTEGER,
+   ID_PERSONAL          INTEGER,
+   PRECIO_TOTAL         VARCHAR2(10),
+   FORMA_DE_PAGO        VARCHAR2(39),
+   constraint PK_PAGOS primary key (ID_PAGOS)
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_27_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_27_FK on PAGOS (
+   ID_PROPIETARIO ASC
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_22_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_22_FK on PAGOS (
+   ID_PERSONAL ASC
+);
+
+/*==============================================================*/
+/* Table: PERSONAL                                              */
+/*==============================================================*/
+create table PERSONAL (
+   ID_PERSONAL          INTEGER               not null,
+   ID_CEMENTERIO        INTEGER,
+   NOMBRE_PERSONAL      VARCHAR2(30),
+   APELLIDO_PERSONAL    VARCHAR2(30),
+   CEDULA_PERSONAL      VARCHAR2(10),
+   TELEFONO_PERSONAL    VARCHAR2(10),
+   DIRECCION_PERSONAL   VARCHAR2(30),
+   EDAD_PERSONAL        VARCHAR2(2),
+   TIPO_PERSONAL        VARCHAR2(30),
+   AREA_PERSONAL        VARCHAR2(30),
+   constraint PK_PERSONAL primary key (ID_PERSONAL)
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_15_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_15_FK on PERSONAL (
+   ID_CEMENTERIO ASC
+);
+
+/*==============================================================*/
+/* Table: PROPIETARIO                                           */
+/*==============================================================*/
+create table PROPIETARIO (
+   ID_PROPIETARIO       INTEGER               not null,
+   ID_CANTON            INTEGER,
+   NOMBRE_PROPIETARIO   VARCHAR2(40),
+   CDEULA_PROPIETARIO   VARCHAR2(10),
+   FECHADENACIMIENTO_PROPIETARIO DATE,
+   LUGARDERESIDENCIA_PROPIETARIO VARCHAR2(20),
+   TELEFONO1_PROPIETARIO VARCHAR2(10),
+   TELEFONOAUX__PROPIETARIO VARCHAR2(10),
+   constraint PK_PROPIETARIO primary key (ID_PROPIETARIO)
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_17_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_17_FK on PROPIETARIO (
+   ID_CANTON ASC
+);
+
+/*==============================================================*/
+/* Table: RELATIONSHIP_16                                       */
+/*==============================================================*/
+create table RELATIONSHIP_16 (
+   ID_TRAMITE           INTEGER               not null,
+   ID_PAGOS             INTEGER               not null,
+   constraint PK_RELATIONSHIP_16 primary key (ID_TRAMITE, ID_PAGOS)
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_23_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_23_FK on RELATIONSHIP_16 (
+   ID_PAGOS ASC
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_16_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_16_FK on RELATIONSHIP_16 (
+   ID_TRAMITE ASC
+);
+
+/*==============================================================*/
+/* Table: REPORTE                                               */
+/*==============================================================*/
+create table REPORTE (
+   ID_REPORTE           INTEGER               not null,
+   ID_PERSONAL          INTEGER,
+   NOMBRE_REPORTE       VARCHAR2(50),
+   FECHA_REPORTE        DATE,
+   DESCRIPCION_REPORTE  VARCHAR2(400),
+   constraint PK_REPORTE primary key (ID_REPORTE)
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_21_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_21_FK on REPORTE (
+   ID_PERSONAL ASC
+);
+
+/*==============================================================*/
+/* Table: TRAMITE                                               */
+/*==============================================================*/
+create table TRAMITE (
+   ID_TRAMITE           INTEGER               not null,
+   ID_BOVEDA            INTEGER,
+   ID_DIFUNTO           INTEGER,
+   ID_PERSONAL          INTEGER,
+   ANO_TRAMITE          DATE,
+   TIPO_TRAMITE         VARCHAR2(25),
+   DESCRIPCION_TRAMITE  CLOB,
+   constraint PK_TRAMITE primary key (ID_TRAMITE)
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_10_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_10_FK on TRAMITE (
+   ID_BOVEDA ASC
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_30_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_30_FK on TRAMITE (
+   ID_DIFUNTO ASC
+);
+
+/*==============================================================*/
+/* Index: RELATIONSHIP_19_FK                                    */
+/*==============================================================*/
+create index RELATIONSHIP_19_FK on TRAMITE (
+   ID_PERSONAL ASC
+);
+
+alter table BOVEDA
+   add constraint FK_BOVEDA_RELATIONS_ESTRUCTU foreign key (ID_ESTRUCTURA)
+      references ESTRUCTURA (ID_ESTRUCTURA);
+
+alter table BOVEDA
+   add constraint FK_BOVEDA_RELATIONS_PROPIETA foreign key (ID_PROPIETARIO)
+      references PROPIETARIO (ID_PROPIETARIO);
+
+alter table CERTIFICADO
+   add constraint FK_CERTIFIC_RELATIONS_PERSONAL foreign key (ID_PERSONAL)
+      references PERSONAL (ID_PERSONAL);
+
+alter table CERTIFICADO
+   add constraint FK_CERTIFIC_RELATIONS_PROPIETA foreign key (ID_PROPIETARIO)
+      references PROPIETARIO (ID_PROPIETARIO);
+
+alter table ESTRUCTURA
+   add constraint FK_ESTRUCTU_RELATIONS_MANZANA foreign key (ID_MANZANA)
+      references MANZANA (ID_MANZANA);
+
+alter table INCIDENTE
+   add constraint FK_INCIDENT_RELATIONS_REPORTE foreign key (ID_REPORTE)
+      references REPORTE (ID_REPORTE);
+
+alter table INCIDENTE
+   add constraint FK_INCIDENT_RELATIONS_BOVEDA foreign key (ID_BOVEDA)
+      references BOVEDA (ID_BOVEDA);
+
+alter table MANZANA
+   add constraint FK_MANZANA_RELATIONS_CEMENTER foreign key (ID_CEMENTERIO)
+      references CEMENTERIO (ID_CEMENTERIO);
+
+alter table PAGOS
+   add constraint FK_PAGOS_RELATIONS_PERSONAL foreign key (ID_PERSONAL)
+      references PERSONAL (ID_PERSONAL);
+
+alter table PAGOS
+   add constraint FK_PAGOS_RELATIONS_PROPIETA foreign key (ID_PROPIETARIO)
+      references PROPIETARIO (ID_PROPIETARIO);
+
+alter table PERSONAL
+   add constraint FK_PERSONAL_RELATIONS_CEMENTER foreign key (ID_CEMENTERIO)
+      references CEMENTERIO (ID_CEMENTERIO);
+
+alter table PROPIETARIO
+   add constraint FK_PROPIETA_RELATIONS_CANTON foreign key (ID_CANTON)
+      references CANTON (ID_CANTON);
+
+alter table RELATIONSHIP_16
+   add constraint FK_RELATION_RELATIONS_TRAMITE foreign key (ID_TRAMITE)
+      references TRAMITE (ID_TRAMITE);
+
+alter table RELATIONSHIP_16
+   add constraint FK_RELATION_RELATIONS_PAGOS foreign key (ID_PAGOS)
+      references PAGOS (ID_PAGOS);
+
+alter table REPORTE
+   add constraint FK_REPORTE_RELATIONS_PERSONAL foreign key (ID_PERSONAL)
+      references PERSONAL (ID_PERSONAL);
+
+alter table TRAMITE
+   add constraint FK_TRAMITE_RELATIONS_BOVEDA foreign key (ID_BOVEDA)
+      references BOVEDA (ID_BOVEDA);
+
+alter table TRAMITE
+   add constraint FK_TRAMITE_RELATIONS_PERSONAL foreign key (ID_PERSONAL)
+      references PERSONAL (ID_PERSONAL);
+
+alter table TRAMITE
+   add constraint FK_TRAMITE_RELATIONS_DIFUNTO foreign key (ID_DIFUNTO)
+      references DIFUNTO (ID_DIFUNTO)
