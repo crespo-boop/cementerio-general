@@ -1,0 +1,21 @@
+----consulta de bovedas ocupadas
+select boveda.NOMBRE_BOVEDA,boveda.ESTADO_BOVEDA,propietario.NOMBRE_PROPIETARIO from boveda
+inner join propietario on boveda.ID_PROPIETARIO=propietario.ID_PROPIETARIO
+WHERE boveda.ESTADO_BOVEDA='Ocupada';
+--consulta tramites
+select personal.NOMBRE_PERSONAL,personal.APELLIDO_PERSONAL,tramite.TIPO_TRAMITE,tramite.ANO_TRAMITE from personal 
+INNER join tramite on personal.ID_PERSONAL = tramite.ID_PERSONAL 
+WHERE tramite.TIPO_TRAMITE='INHUMACION';
+
+select personal.NOMBRE_PERSONAL,personal.APELLIDO_PERSONAL,tramite.TIPO_TRAMITE,tramite.ANO_TRAMITE from personal 
+INNER join tramite on personal.ID_PERSONAL = tramite.ID_PERSONAL 
+WHERE tramite.TIPO_TRAMITE='EXHUMACIONES';
+-----estructura
+select estructura.TIPO_ESTRUCTURA,sum(estructura.NUMERO_ESTRUCTURA) from estructura
+WHERE estructura.TIPO_ESTRUCTURA='nicho' group by estructura.TIPO_ESTRUCTURA;
+
+select estructura.TIPO_ESTRUCTURA,sum(estructura.NUMERO_ESTRUCTURA) from estructura
+WHERE estructura.TIPO_ESTRUCTURA='boveda individual' group by estructura.TIPO_ESTRUCTURA;
+
+-----consulta de reportes
+SELECT reporte.ID_REPORTE,reporte.NOMBRE_REPORTE,reporte.DESCRIPCION_REPORTE,reporte.FECHA_REPORTE from reporte;
