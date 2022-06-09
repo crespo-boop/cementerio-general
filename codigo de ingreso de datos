@@ -1,0 +1,255 @@
+--REgistro delcementerio
+INSERT INTO cementerio VALUES ('600','calle 15 av 35 y 36','Cementerio general','6400cm2');
+
+--datos de las manzanas
+INSERT INTO manzana VALUES ('1','600','A','1');
+INSERT INTO manzana VALUES ('2','600','B','2');
+INSERT INTO manzana VALUES ('3','600','C','3');
+INSERT INTO manzana VALUES ('4','600','D','4');
+INSERT INTO manzana VALUES ('5','600','E','5');
+INSERT INTO manzana VALUES ('6','600','F','6');
+
+
+--datos estructura area A--
+INSERT INTO estructura VALUES ('100','1','A1','nicho','8','3m altura 4m ancho 7m largo','1');
+INSERT INTO estructura VALUES ('101','1','A2','nicho','8','3m altura 4m ancho 7m largo','1');
+INSERT INTO estructura VALUES ('102','1','A3','nicho','8','3m altura 4m ancho 7m largo','1');
+--boveda solitaria A--
+INSERT INTO estructura VALUES ('103','1','A4','boveda individual','1','3m altura 4m ancho 4.5m largo','1');
+--datos estructura area B--
+INSERT INTO estructura VALUES ('104','2','B1','boveda individual','1','3m altura 4m ancho 4.5m largo','1');
+INSERT INTO estructura VALUES ('105','2','B2','boveda individual','1','3m altura 4m ancho 4.5m largo','1');
+INSERT INTO estructura VALUES ('106','2','B3','nicho','10','3m altura 4m ancho 7m largo','1');
+--datos estructura area c
+INSERT INTO estructura VALUES ('107','3','C1','boveda individual','1','3m altura 4m ancho 4.5m largo','1');
+INSERT INTO estructura VALUES ('108','3','C2','boveda individual','1','3m altura 4m ancho 4.5m largo','1');
+--datos estructura area d
+INSERT INTO estructura VALUES ('109','4','D1','boveda individual','1','3m altura 4m ancho 4.5m largo','1');
+INSERT INTO estructura VALUES ('110','4','D2','boveda individual','1','3m altura 4m ancho 4.5m largo','1');
+--datos estructura area e
+INSERT INTO estructura VALUES ('111','5','E1','boveda individual','1','3m altura 4m ancho 4.5m largo','1');
+INSERT INTO estructura VALUES ('112','5','E2','nicho','10','3m altura 4m ancho 7m largo','1');
+--datos estructura area F
+INSERT INTO estructura VALUES ('113','6','F1','nicho','10','3m altura 4m ancho 7m largo','1');
+INSERT INTO estructura VALUES ('114','6','F2','boveda individual','1','3m altura 4m ancho 4.5m largo','1');
+
+--datos del personal
+INSERT INTO personal VALUES ('28','600','juan','mora','1316667778','0996663387','calle24av30','20','administrativo','administracion');
+INSERT INTO personal VALUES ('26','600','jean','crespo','1317047445','0995445566','calle15av34','20','administrativo','administracion');
+INSERT INTO personal VALUES ('27','600','kevin','zamora','1317776668','0997773399','calle30av17','40','administrativo','administracion');
+INSERT INTO personal VALUES ('29','600','Jonathan','Narvaez','1310053218','0964321332','calle13av45','30','seguridad','A B C');
+INSERT INTO personal VALUES ('30','600','Ahmed','Gaspar','1302047453','0998987867','calle14av46','38','seguridad','D E F');
+INSERT INTO personal VALUES ('31','600','Juan','Lopez','1387698569','0976877654','calle145av13','29','seguridad','Entrada');
+INSERT INTO personal VALUES ('32','600','Baldomero','Cerda','1323415392','0932314970','calle32av8','49','Limpieza','A B C');
+INSERT INTO personal VALUES ('33','600','Cesar','Fidalgo','1356567854','0931514253','calle23av1','50','Limpieza','D E F');
+INSERT INTO personal VALUES ('34','600','Albert','Manzano','1310978765','0943444532','calle15av37','30','Logistica','A B C D E F');
+INSERT INTO personal VALUES ('35','600','Alan ','Navas','1302341234','0900323676','calle2av24','45','Logistica','A B C D E F');
+INSERT INTO personal VALUES ('36','600','Marina','Gonzalo','1390765455','0976089870','calle15av37','36','Externo','Cantonal');
+INSERT INTO personal VALUES ('37','600','Anabel','Rosales','1376899087','0990807060','calle8av10','29','Externo','Cantonal');
+
+--datos de canton
+INSERT INTO canton VALUES ('1','junin');
+INSERT INTO canton VALUES ('2','perderlanes');
+INSERT INTO canton VALUES ('3','chone');
+INSERT INTO canton VALUES ('4','manta');
+INSERT INTO canton VALUES ('5','san lorenzo');
+INSERT INTO canton VALUES ('6','palora');
+
+
+--propietario
+INSERT INTO propietario VALUES ('50','1','Marco Zafra','1306543216',TO_DATE('1987/05/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'junin','0955554444','0911111111');
+INSERT INTO propietario VALUES ('51','2','Sheila Corrales','1305768790',TO_DATE('1987/02/15 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'portoviejo','0911112211','0976656508');
+INSERT INTO propietario VALUES ('52','5','Lucia Olmos','1333467509',TO_DATE('1987/08/22 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'san lorenzo','0924337777','0912213223');
+INSERT INTO propietario VALUES ('53','1','Eduardo Suarez','1308765455',TO_DATE('1987/12/10 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'junin','0910012002','0914412342');
+INSERT INTO propietario VALUES ('54','5','Aitor Talavera','1398990076',TO_DATE('1987/06/30 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'san lorenzo','0942335500','0911154466');
+INSERT INTO propietario VALUES ('55','4','Natalia Kaur','1398667743',TO_DATE('1987/01/17 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'manta','0942354111','0946410906');
+INSERT INTO propietario VALUES ('56','1','Jon Fajardo','1306554004',TO_DATE('1987/01/31 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'junin','0932440000','0911110132');
+INSERT INTO propietario VALUES ('57','3','Palmira Saldaña','1376771123',TO_DATE('1987/09/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'san jacinto','0966865644','0987877800');
+INSERT INTO propietario VALUES ('58','6','Aurora Gomis','1309769899',TO_DATE('1987/05/12 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'Sangay','0929065443','0976554343');
+INSERT INTO propietario VALUES ('600','4','Cementerio general','-----',TO_DATE('1970/01/12 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'manta','0912340909','0900009876');
+
+---bovedas
+
+INSERT INTO boveda VALUES ('1','50','100','A','Ocupada','A-1');
+INSERT INTO boveda VALUES ('2','50','100','A','Ocupada','A-2');
+INSERT INTO boveda VALUES ('3','50','100','A','Ocupada','A-3');
+INSERT INTO boveda VALUES ('4','50','100','A','Ocupada','A-4');
+INSERT INTO boveda VALUES ('5','600','100','A','Libre','A-5');
+INSERT INTO boveda VALUES ('6','600','100','A','Libre','A-6');
+INSERT INTO boveda VALUES ('7','600','100','A','Libre','A-7');
+INSERT INTO boveda VALUES ('8','600','100','A','Libre','A-8');
+---
+INSERT INTO boveda VALUES ('9','600','101','A','Libre','A-9');
+INSERT INTO boveda VALUES ('10','600','101','A','Libre','A-10');
+INSERT INTO boveda VALUES ('11','600','101','A','Libre','A-11');
+INSERT INTO boveda VALUES ('12','600','101','A','Libre','A-12');
+INSERT INTO boveda VALUES ('13','600','101','A','Libre','A-13');
+INSERT INTO boveda VALUES ('14','600','101','A','Libre','A-14');
+INSERT INTO boveda VALUES ('15','600','101','A','Libre','A-15');
+INSERT INTO boveda VALUES ('16','600','101','A','Libre','A-16');
+-----
+INSERT INTO boveda VALUES ('17','600','102','A','Libre','A-17');
+INSERT INTO boveda VALUES ('18','600','102','A','Libre','A-18');
+INSERT INTO boveda VALUES ('19','600','102','A','Libre','A-19');
+INSERT INTO boveda VALUES ('20','600','102','A','Libre','A-20');
+INSERT INTO boveda VALUES ('21','600','102','A','Libre','A-21');
+INSERT INTO boveda VALUES ('22','600','102','A','Libre','A-22');
+INSERT INTO boveda VALUES ('23','600','102','A','Libre','A-23');
+INSERT INTO boveda VALUES ('24','600','102','A','Libre','A-24');
+
+INSERT INTO boveda VALUES ('25','600','103','A','Libre','A-25');
+
+
+
+INSERT INTO boveda VALUES ('26','55','104','B','Ocupada','B-1');
+
+INSERT INTO boveda VALUES ('27','51','105','B','Ocupada','B-2');
+
+INSERT INTO boveda VALUES ('28','52','106','B','Ocupada','B-3');
+INSERT INTO boveda VALUES ('29','56','106','B','Ocupada','B-4');
+INSERT INTO boveda VALUES ('30','600','106','B','Libre','B-5');
+INSERT INTO boveda VALUES ('31','57','106','B','Ocupada','B-6');
+INSERT INTO boveda VALUES ('32','600','106','B','Libre','B-7');
+INSERT INTO boveda VALUES ('33','600','106','B','Libre','B-8');
+INSERT INTO boveda VALUES ('34','53','106','B','Ocuapda','B-9');
+INSERT INTO boveda VALUES ('35','600','106','B','Libre','B-10');
+INSERT INTO boveda VALUES ('36','54','106','B','Ocupada','B-11');
+INSERT INTO boveda VALUES ('37','600','106','B','Libre','B-12');
+
+INSERT INTO boveda VALUES ('38','600','107','C','Libre','C-1');
+INSERT INTO boveda VALUES ('39','600','108','C','Libre','C-2');
+
+INSERT INTO boveda VALUES ('40','600','109','D','Libre','D-1');
+INSERT INTO boveda VALUES ('41','600','110','D','Libre','D-2');
+
+INSERT INTO boveda VALUES ('42','600','111','E','Libre','E-1');
+
+INSERT INTO boveda VALUES ('43','600','112','E','Libre','E-2');
+INSERT INTO boveda VALUES ('44','600','112','E','Libre','E-3');
+INSERT INTO boveda VALUES ('45','600','112','E','Libre','E-4');
+INSERT INTO boveda VALUES ('46','600','112','E','Libre','E-5');
+INSERT INTO boveda VALUES ('47','600','112','E','Libre','E-6');
+INSERT INTO boveda VALUES ('48','600','112','E','Libre','E-7');
+INSERT INTO boveda VALUES ('49','600','112','E','Libre','E-8');
+INSERT INTO boveda VALUES ('50','600','112','E','Libre','E-9');
+INSERT INTO boveda VALUES ('51','600','112','E','Libre','E-10');
+INSERT INTO boveda VALUES ('52','600','112','E','Libre','E-11');
+
+INSERT INTO boveda VALUES ('53','600','113','F','Libre','F-1');
+INSERT INTO boveda VALUES ('54','600','113','F','Libre','F-2');
+INSERT INTO boveda VALUES ('55','600','113','F','Libre','F-3');
+INSERT INTO boveda VALUES ('56','600','113','F','Libre','F-4');
+INSERT INTO boveda VALUES ('57','600','113','F','Libre','F-5');
+INSERT INTO boveda VALUES ('58','600','113','F','Libre','F-6');
+INSERT INTO boveda VALUES ('59','600','113','F','Libre','F-7');
+INSERT INTO boveda VALUES ('60','600','113','F','Libre','F-8');
+INSERT INTO boveda VALUES ('61','600','113','F','Libre','F-9');
+INSERT INTO boveda VALUES ('62','600','113','F','Libre','F-10');
+INSERT INTO boveda VALUES ('63','600','114','F','Libre','F-11');
+
+-----datos de difunto
+INSERT INTO difunto VALUES ('1','Benita','Zafra','covid',TO_DATE('2020/07/01 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO difunto VALUES ('2','Samara','Zafra','covid',TO_DATE('2020/12/24 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO difunto VALUES ('3','Marc','Zafra','covid',TO_DATE('2020/8/30 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO difunto VALUES ('4','Rogelio ','Zafra','covid',TO_DATE('2021/01/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO difunto VALUES ('5','Itziar ','Chico','accidente de trancito',TO_DATE('2007/07/24 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO difunto VALUES ('6','Herminio','Saenz','muerte cerebral',TO_DATE('1995/07/24 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO difunto VALUES ('7','Herminio','Saenz','Alzheimer',TO_DATE('2004/09/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO difunto VALUES ('8','Miguel','Navarrete','VIH',TO_DATE('2015/07/24 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO difunto VALUES ('9','Lucas','Afonso','VIH',TO_DATE('2000/07/24 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO difunto VALUES ('10','Roser','Ruz','accidente de trancito',TO_DATE('2021/07/24 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO difunto VALUES ('11','Santiago','Crespo','covid',TO_DATE('2022/07/28 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
+
+---tramites datos 
+INSERT INTO Tramite VALUES ('1','1','1','34',TO_DATE('2020/08/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'INHUMACION','Cuando se entierra un difunto');
+INSERT INTO Tramite VALUES ('2','2','2','35',TO_DATE('2020/08/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'INHUMACION','Cuando se entierra un difunto');
+INSERT INTO Tramite VALUES ('3','3','3','34',TO_DATE('2020/09/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'INHUMACION','Cuando se entierra un difunto');
+INSERT INTO Tramite VALUES ('4','4','4','34',TO_DATE('2021/01/08 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'INHUMACION','Cuando se entierra un difunto');
+INSERT INTO Tramite VALUES ('5','26','11','35',TO_DATE('2022/07/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'INHUMACION','Cuando se entierra un difunto');
+INSERT INTO Tramite VALUES ('6','27','9','34',TO_DATE('2000/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'INHUMACION','Cuando se entierra un difunto');
+INSERT INTO Tramite VALUES ('7','28','10','35',TO_DATE('2021/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'INHUMACION','Cuando se entierra un difunto');
+INSERT INTO Tramite VALUES ('8','29','7','35',TO_DATE('2004/09/10 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'INHUMACION','Cuando se entierra un difunto');
+INSERT INTO Tramite VALUES ('9','31','6','34',TO_DATE('1995/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'INHUMACION','Cuando se entierra un difunto');
+INSERT INTO Tramite VALUES ('10','34','5','34',TO_DATE('2007/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'INHUMACION','Cuando se entierra un difunto');
+INSERT INTO Tramite VALUES ('11','36','8','35',TO_DATE('2015/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'INHUMACION','Cuando se entierra un difunto');
+
+INSERT INTO Tramite VALUES ('12','2','2','36',TO_DATE('2022/07/2 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'EXHUMACIONES','Cuando se desentierra para la movilizacion de los restos de un difunto');
+INSERT INTO Tramite VALUES ('13','29','7','37',TO_DATE('2010/04/30 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'EXHUMACIONES','Cuando se desentierra para la movilizacion de los restos de un difunto');
+INSERT INTO Tramite VALUES ('14','26','11','36',TO_DATE('2025/09/15 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'EXHUMACIONES','Cuando se desentierra para la movilizacion de los restos de un difunto');
+INSERT INTO Tramite VALUES ('15','36','8','37',TO_DATE('2020/02/16 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'EXHUMACIONES','Cuando se desentierra para la movilizacion de los restos de un difunto');
+INSERT INTO Tramite VALUES ('16','31','6','36',TO_DATE('2015/12/07 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'EXHUMACIONES','Cuando se desentierra para la movilizacion de los restos de un difunto');
+
+
+--certificados
+INSERT INTO Certificado VALUES ('1','50','27',TO_DATE('2020/08/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'kevin zamora','Defuncion','este documento certifica el deceso del difunto','no entregado');
+INSERT INTO Certificado VALUES ('2','50','27',TO_DATE('2020/08/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'kevin zamora','Propiedad','este documento certifica la pertenencia de la boveda','entregado');
+INSERT INTO Certificado VALUES ('3','50','27',TO_DATE('2020/12/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'kevin zamora','Defuncion','este documento certifica el deceso del difunto','no entregado');
+INSERT INTO Certificado VALUES ('4','50','27',TO_DATE('2020/12/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'kevin zamora','Propiedad','este documento certifica la pertenencia de la boveda','entregado');
+INSERT INTO Certificado VALUES ('5','50','27',TO_DATE('2020/09/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'kevin zamora','Defuncion','este documento certifica el deceso del difunto','no entregado');
+INSERT INTO Certificado VALUES ('6','50','27',TO_DATE('2020/09/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'kevin zamora','Propiedad','este documento certifica la pertenencia de la boveda','entregado');
+INSERT INTO Certificado VALUES ('7','50','27',TO_DATE('2021/01/08 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'kevin zamora','Defuncion','este documento certifica el deceso del difunto','no entregado');
+INSERT INTO Certificado VALUES ('8','50','27',TO_DATE('2021/01/08 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'kevin zamora','Propiedad','este documento certifica la pertenencia de la boveda','entregado');
+INSERT INTO Certificado VALUES ('9','51','26',TO_DATE('2007/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'jean crespo','Propiedad','este documento certifica la pertenencia de la boveda','entregado');
+INSERT INTO Certificado VALUES ('10','51','26',TO_DATE('2007/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'jean crespo','Defuncion','este documento certifica el deceso del difunto','no entregado');
+INSERT INTO Certificado VALUES ('11','52','27',TO_DATE('1995/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'kevin zamora','Propiedad','este documento certifica la pertenencia de la boveda','entregado');
+INSERT INTO Certificado VALUES ('12','52','27',TO_DATE('1995/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'kevin zamora','Defuncion','este documento certifica el deceso del difunto','no entregado');
+INSERT INTO Certificado VALUES ('13','53','27',TO_DATE('2004/09/10 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'kevin zamora','Propiedad','este documento certifica la pertenencia de la boveda','entregado');
+INSERT INTO Certificado VALUES ('14','53','27',TO_DATE('2004/09/10 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'kevin zamora','Defuncion','este documento certifica el deceso del difunto','no entregado');
+INSERT INTO Certificado VALUES ('15','54','26',TO_DATE('2015/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'jean crespo','Propiedad','este documento certifica la pertenencia de la boveda','no entregado');
+INSERT INTO Certificado VALUES ('16','54','26',TO_DATE('2015/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'jean crespo','Defuncion','este documento certifica el deceso del difunto',' entregado');
+INSERT INTO Certificado VALUES ('17','55','26',TO_DATE('2000/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'jean crespo','Propiedad','este documento certifica la pertenencia de la boveda','no entregado');
+INSERT INTO Certificado VALUES ('18','55','26',TO_DATE('2000/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'jean crespo','Defuncion','este documento certifica el deceso del difunto',' entregado');
+INSERT INTO Certificado VALUES ('19','56','26',TO_DATE('2021/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'jean crespo','Propiedad','este documento certifica la pertenencia de la boveda','no entregado');
+INSERT INTO Certificado VALUES ('20','56','26',TO_DATE('2021/07/29 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'jean crespo','Defuncion','este documento certifica el deceso del difunto',' entregado');
+INSERT INTO Certificado VALUES ('21','57','26',TO_DATE('2022/07/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'jean crespo','Propiedad','este documento certifica la pertenencia de la boveda','no entregado');
+INSERT INTO Certificado VALUES ('22','57','26',TO_DATE('2022/07/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'jean crespo','Defuncion','este documento certifica el deceso del difunto',' entregado');
+
+INSERT INTO reporte VALUES ('1','31','Invacion a las bovedas',TO_DATE('2020/02/11 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'Se encontro a un individuo dentro del de una de las bovedas del cementerio y se resistio a la captura');
+INSERT INTO Incidente VALUES ('2','48','1','E','irrupcion a las bovedas','E-48','23:50');
+INSERT INTO Incidente VALUES ('1','48','1','E','irrupcion al cementerio','E-48','23:50');
+INSERT INTO Incidente VALUES ('3','48','1','E','Resistencia al arresto ','E-48','23:50');
+
+INSERT INTO reporte VALUES ('2','31','Detencion de asalta tumbas',TO_DATE('2022/01/6 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'Se encontraron a 2 individuos queriendo asaltar una de las bovedas ocupadas se logro detenerlos antes que puedieran llevarse un difunto');
+INSERT INTO Incidente VALUES ('4','4','2','A','daño a la propiedad','A-4','22:00');
+INSERT INTO Incidente VALUES ('5','4','2','A','irrupcion al cementerio','A-4','22:00');
+INSERT INTO Incidente VALUES ('6','4','2','A','herrir a un guardia','A-4','22:00');
+
+INSERT INTO reporte VALUES ('3','30','Avistamiento paranormal',TO_DATE('2022/01/6 21:02:44', 'yyyy/mm/dd hh24:mi:ss'),'Se logro apreciar a una señora vestida de blanco dentro de los alrededores dirigiendose a una boveda individual donde entro un al acercarnos al lugar no habia nadie ');
+INSERT INTO Incidente VALUES ('7','25','3','A','irrupcion al cementerio','A-25','3:33');
+
+--ingreso de pagos
+INSERT INTO PAGOS VALUES ('1','50','28','94,04','Efectivo');
+INSERT INTO PAGOS VALUES ('2','50','28','94,04','Efectivo'); 
+INSERT INTO PAGOS VALUES ('3','50','28','94,04','Efectivo'); 
+INSERT INTO PAGOS VALUES ('4','50','28','94,04','Efectivo');
+INSERT INTO PAGOS VALUES ('5','51','28','47,00','Efectivo'); 
+INSERT INTO PAGOS VALUES ('6','52','28','47,00','Efectivo'); 
+INSERT INTO PAGOS VALUES ('7','53','28','94,04','Efectivo');
+INSERT INTO PAGOS VALUES ('8','54','28','94,04','Efectivo'); 
+INSERT INTO PAGOS VALUES ('9','55','28','47,00','Efectivo');
+INSERT INTO PAGOS VALUES ('10','56','28','94,04','Efectivo');
+INSERT INTO PAGOS VALUES ('11','57','28','94,04','Efectivo'); 
+
+INSERT INTO PAGOS VALUES ('12','50','28','100,00','Efectivo');
+INSERT INTO PAGOS VALUES ('13','56','28','100,00','Efectivo'); 
+INSERT INTO PAGOS VALUES ('14','55','28','100,04','Efectivo'); 
+INSERT INTO PAGOS VALUES ('15','57','28','100,04','Efectivo');
+INSERT INTO PAGOS VALUES ('16','53','28','100,00','Efectivo'); 
+
+INSERT INTO relationship_16 VALUES ('1','1');
+INSERT INTO relationship_16 VALUES ('2','2');
+INSERT INTO relationship_16 VALUES ('3','3');
+INSERT INTO relationship_16 VALUES ('4','4');
+INSERT INTO relationship_16 VALUES ('5','5');
+INSERT INTO relationship_16 VALUES ('6','6');
+INSERT INTO relationship_16 VALUES ('7','7');
+INSERT INTO relationship_16 VALUES ('8','8');
+INSERT INTO relationship_16 VALUES ('9','9');
+INSERT INTO relationship_16 VALUES ('10','10');
+INSERT INTO relationship_16 VALUES ('11','11');
+
+INSERT INTO relationship_16 VALUES ('12','12');
+INSERT INTO relationship_16 VALUES ('13','13');
+INSERT INTO relationship_16 VALUES ('14','14');
+INSERT INTO relationship_16 VALUES ('15','15');
+INSERT INTO relationship_16 VALUES ('16','16');
